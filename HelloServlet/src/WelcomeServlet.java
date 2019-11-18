@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class WelcomeServlet
- */
+// URI指定
 @WebServlet("/WelcomeServlet")
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,14 +29,20 @@ public class WelcomeServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	// POST時に実行
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//doGet(request, response);
+
+		// エンコード指定
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String user_name = request.getParameter("user_name");
 
+		// user_nameの値を格納してログ出力
+		String user_name = request.getParameter("user_name");
 		System.out.println(user_name);
 
+		// user_nameの値をHTML出力
 		PrintWriter out = response.getWriter();
 		out.println("<html><head></head><body><div>ようこそ、" + user_name + "さん！</body></html>");
 	}
