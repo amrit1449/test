@@ -9,7 +9,7 @@ public class DBConnector {
 
 	// ドライバやURLの指定
 	private static String driverName = "com.mysql.jdbc.Driver";
-	private static String url = "jdbc:mysql//localhost/logindb_ohki";
+	private static String url = "jdbc:mysql://localhost/logindb_ohki";
 
 	private static String user = "root";
 	private static String password = "mysql";
@@ -26,7 +26,6 @@ public class DBConnector {
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-
 		return con;
 	}
 }
